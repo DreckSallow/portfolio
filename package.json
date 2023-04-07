@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && pnpm rome check ./src/}",
+    "format": "pnpm rome format ./src/ --write"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -16,5 +17,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "rome": "12.0.0",
+    "tailwindcss": "^3.3.1"
   }
 }
