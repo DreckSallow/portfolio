@@ -1,4 +1,20 @@
+import NavBar from "@/components/navbar";
 import "./globals.css";
+
+const routes = [
+	{
+		link: "#about",
+		text: "About",
+	},
+	{
+		link: "#projects",
+		text: "Projects",
+	},
+	{
+		link: "#blog",
+		text: "Blog",
+	},
+];
 
 export default function RootLayout({
 	children,
@@ -7,7 +23,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body className="w-screen h-screen">
+				<NavBar routes={routes} />
+				{children}
+			</body>
 		</html>
 	);
 }
