@@ -1,6 +1,7 @@
+"use client";
 import styled from "styled-components";
 import { useState, useEffect, useMemo, MouseEvent } from "react";
-import { CloseIcon, MenuIcon,MoonIcon,SunIcon} from "./icons";
+import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "./icons";
 import Link from "next/link";
 
 interface Route {
@@ -28,6 +29,14 @@ const NavBar = ({ routes, withTheme }: Props) => {
 	});
 
 	useEffect(() => {
+		if (theme === "dark") {
+			document.documentElement.classList.add("dark-theme");
+			document.documentElement.classList.remove("base-theme");
+		} else {
+			document.documentElement.classList.remove("dark-theme");
+			document.documentElement.classList.add("base-theme");
+		}
+
 		function handleScroll() {
 			if (window.pageYOffset > 5) {
 				setMenuStyle(true);
@@ -62,20 +71,27 @@ const NavBar = ({ routes, withTheme }: Props) => {
 	};
 	const toggleTheme = (thm: Theme) => {
 		window.localStorage.setItem("theme", thm);
+		if (thm === "dark") {
+			document.documentElement.classList.add("dark-theme");
+			document.documentElement.classList.remove("base-theme");
+		} else {
+			document.documentElement.classList.remove("dark-theme");
+			document.documentElement.classList.add("base-theme");
+		}
 		setTheme(thm);
 	};
 
 	return (
 		<nav
-			className={` text-gray-700 dark:bg-slate-500 w-full sticky top-0 h-16 transition duration-150 px-4 ${
-				menuStyle ? "bg-white border-b-1" : "bg-inherit"
+			className={` bg-base text-normal w-full fixed top-0 h-16 px-4 z-20 ${
+				menuStyle ? "border-b-1" : "bg-inherit"
 			}`}
 		>
 			<ul className="fill gap-4 justify-evenly font-normal sm:flex-y-center hidden">
 				{routesHtml}
 				{withTheme && (
 					<li
-						className="fill-gray-700 cursor-pointer"
+						className="icon-normal cursor-pointer"
 						onClick={() => toggleTheme(theme === "light" ? "dark" : "light")}
 						onKeyDown={() => {}}
 					>
@@ -102,7 +118,7 @@ const NavBar = ({ routes, withTheme }: Props) => {
 				</li>
 			</ul>
 			{displayMenu && (
-				<div className="bg-white mt-16 fixed-fill sm:hidden px-6">
+				<div className="bg-white dark-color mt-16 fixed-fill sm:hidden px-6">
 					<MenuLinks
 						className="w-full flex-column gap-3 justify-center p-6"
 						onClick={menuClickLink}

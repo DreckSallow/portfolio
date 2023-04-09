@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark-theme {
+  --text-acent: 213, 94%, 68%;
+  --text-base: 0, 0%, 100%;
+  --bg-base: 240, 4%, 16%;
+  --alpha: 1;
+}
+
+.base-theme {
+  --text-acent: 213%, 94%, 68%;
+  --text-base: 0, 0%, 0%;
+  --alpha: 1;
+  --bg-base: 0, 0%, 100%;
+}
+
+@layer utilities {
+  .text-accent {
+    color: hsla(var(--text-acent), var(--alpha));
+  }
+
+  .text-normal {
+    color: hsla(var(--text-base), var(--alpha));
+  }
+
+  .icon-normal {
+    fill: hsla(var(--text-base), var(--alpha));
+  }
+
+  .bg-base {
+    background-color: hsla(var(--bg-base), var(--alpha));
+  }
+}
+
 @layer components {
   .fixed-fill {
     @apply fixed top-0 bottom-0 right-0 left-0 z-10;
@@ -21,5 +53,14 @@
 
   .flex-column {
     @apply flex flex-col;
+  }
+
+  .icon-dark {
+    @apply dark:fill-gray-100;
+  }
+
+  /* Sections */
+  .section {
+    @apply sm:px-6 min-h-screen pt-16 pb-4 px-4;
   }
 }
