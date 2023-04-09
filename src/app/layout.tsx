@@ -23,8 +23,8 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="w-screen h-screen">
-				<NavBar routes={routes} />
+			<body className="min-w-screen min-h-screen">
+				<NavBar routes={routes} withTheme />
 				{children}
 			</body>
 		</html>
