@@ -10,6 +10,7 @@
     "format": "pnpm rome format ./src/ --write"
   },
   "dependencies": {
+    "@prisma/client": "^4.12.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
@@ -17,12 +18,14 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.9",
+    "swr": "^2.1.2",
     "typescript": "5.0.3"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
+    "prisma": "^4.12.0",
     "rome": "12.0.0",
     "tailwindcss": "^3.3.1"
   }

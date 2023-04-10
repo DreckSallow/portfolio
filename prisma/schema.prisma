@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// add to git? https://www.prisma.io/docs/concepts/components/prisma-migrate/migration-histories
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id          Int    @id @default(autoincrement())
+  title       String @unique @db.VarChar(100)
+  description String
+  overview    String @db.VarChar(200)
+  img         String
+  video       String
+  repository  String
+  demo        String
+}
+
+model Post {
+  id       Int    @id @default(autoincrement())
+  title    String @unique @db.VarChar(300)
+  content  String
+  authorId Int
+  User     User   @relation(fields: [authorId], references: [id])
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  admin    Boolean //Its only for the own of project
+  writer   Boolean //Its for the users can write posts
+  username String  @unique
+  password String  @unique
+  Post     Post[]
+}
