@@ -1,20 +1,5 @@
-import NavBar from "@/components/navbar";
 import "./globals.css";
-
-const routes = [
-	{
-		link: "#about",
-		text: "About",
-	},
-	{
-		link: "#projects",
-		text: "Projects",
-	},
-	{
-		link: "#blog",
-		text: "Blog",
-	},
-];
+import NavBar from "./navbar";
 
 export default function RootLayout({
 	children,
@@ -22,9 +7,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" className="base-theme">
 			<body className="min-w-screen min-h-screen">
-				<NavBar routes={routes} withTheme />
+				<NavBar />
 				{children}
 			</body>
 		</html>

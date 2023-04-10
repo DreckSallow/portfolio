@@ -10,7 +10,7 @@
 }
 
 .base-theme {
-  --text-acent: 213%, 94%, 68%;
+  --text-acent: 213, 94%, 68%;
   --text-base: 0, 0%, 0%;
   --alpha: 1;
   --bg-base: 0, 0%, 100%;
