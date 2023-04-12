@@ -31,10 +31,14 @@ model Post {
 }
 
 model User {
-  id       Int     @id @default(autoincrement())
-  admin    Boolean //Its only for the own of project
-  writer   Boolean //Its for the users can write posts
-  username String  @unique
-  password String  @unique
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  password String @unique
   Post     Post[]
+  role     Role   @default(USER)
+}
+
+enum Role {
+  USER
+  ADMIND
 }

@@ -1,6 +1,7 @@
 "use client";
 import { MoonIcon, SunIcon } from "@/components/icons";
 import { Nav, NavItem, NavLink } from "@/components/nav/nav";
+import { useSession } from "@/context/auth/context";
 import { useLocalTheme } from "@/hooks/useLocalTheme";
 import Link from "next/link";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import { useState } from "react";
 const NavBar = () => {
 	const [openMenu, setOpenMenu] = useState<undefined | boolean>(false);
 	const [theme, setTheme] = useLocalTheme();
+	const { userSession, setUserSession } = useSession();
 
 	const ThemeIcon = () => {
 		return theme === "light" ? (
@@ -28,13 +30,25 @@ const NavBar = () => {
 			<NavLink link="/" text="Home" />
 			<NavLink link="/blog" text="Blog" />
 			<NavItem
+				className="cursor-pointer"
 				onClick={() => {
 					setOpenMenu((p) => !p);
 				}}
 			>
-				<Link href="/auth" className="icon-normal">
-					<span className="">Acces</span>
-				</Link>
+				{!userSession ? (
+					<Link href="/auth" className="icon-normal">
+						<span className="">Acces</span>
+					</Link>
+				) : (
+					<span
+						onClick={() => {
+							setUserSession(null);
+						}}
+						onKeyDown={() => {}}
+					>
+						Logout
+					</span>
+				)}
 			</NavItem>
 			<NavItem
 				onClick={() => {

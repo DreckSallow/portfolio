@@ -1,3 +1,4 @@
+import AuthProvider from "@/context/auth/provider";
 import "./globals.css";
 import NavBar from "./navbar";
 
@@ -9,8 +10,10 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="base-theme">
 			<body className="min-w-screen min-h-screen">
-				<NavBar />
-				{children}
+				<AuthProvider>
+					<NavBar />
+					{children}
+				</AuthProvider>
 			</body>
 		</html>
 	);
