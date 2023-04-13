@@ -36,7 +36,7 @@ const NavBar = () => {
 				}}
 			>
 				{!userSession ? (
-					<Link href="/auth" className="icon-normal">
+					<Link href="/login" className="icon-normal">
 						<span className="">Acces</span>
 					</Link>
 				) : (
