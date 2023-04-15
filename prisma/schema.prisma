@@ -12,14 +12,14 @@ datasource db {
 }
 
 model Project {
-  id          Int    @id @default(autoincrement())
-  title       String @unique @db.VarChar(100)
+  id          Int     @id @default(autoincrement())
+  title       String  @unique @db.VarChar(100)
   description String
-  overview    String @db.VarChar(200)
-  img         String
-  video       String
-  repository  String
-  demo        String
+  overview    String  @db.VarChar(200)
+  img         String?
+  video       String?
+  repository  String?
+  demo        String?
 }
 
 model Post {
