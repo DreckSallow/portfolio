@@ -1,9 +1,7 @@
-import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import CONFIG from "..";
-
-const prisma = new PrismaClient();
+import { prisma } from "../prisma";
 
 export async function POST(req: Request) {
 	const { username, password } = await req.json();
