@@ -7,3 +7,7 @@ export interface Project {
 	repository?: string;
 	demo?: string;
 }
+
+export interface ProjectWithId extends Project {
+	id: number;
+}

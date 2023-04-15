@@ -6,7 +6,7 @@
   --text-acent: 213, 94%, 68%;
   --text-base: 0, 0%, 100%;
   --bg-base: 240, 4%, 16%; /*bg-zinc-800*/
-  --bg-soft: 240, 5%, 26%; /*bg-zinc-700*/
+  --bg-soft: 240, 5%, 24%; /*bg-zinc-700*/
   --alpha: 1;
 }
 
@@ -17,6 +17,13 @@
   --bg-base: 0, 0%, 100%;
   --bg-soft: 240, 5%, 26%; /*bg-zinc-700*/
   --bg-soft: 240, 5%, 96%; /*bg-zinc-100*/
+}
+
+@layer base {
+  input,
+  textarea {
+    @apply outline-none;
+  }
 }
 
 @layer utilities {
@@ -69,5 +76,9 @@
   /* Sections */
   .section {
     @apply sm:px-6 min-h-screen pt-16 pb-4 px-4;
+  }
+
+  .container-page {
+    @apply pt-16 min-h-screen flex-center;
   }
 }

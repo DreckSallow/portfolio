@@ -18,7 +18,7 @@ const Auth = () => {
 
 	useEffect(() => {
 		if (userSession) {
-			return router.push("/"); //Or use cookies?🤔
+			return router.push("/dashboard"); //Or use cookies?🤔
 		}
 	}, [userSession]);
 
