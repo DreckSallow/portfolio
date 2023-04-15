@@ -27,6 +27,7 @@ const NavBar = () => {
 			}}
 			logo={<span className="text-accent">Dreck</span>}
 		>
+			{userSession && <NavLink link="/dashboard" text="Dashboard" />}
 			<NavLink link="/" text="Home" />
 			<NavLink link="/blog" text="Blog" />
 			<NavItem

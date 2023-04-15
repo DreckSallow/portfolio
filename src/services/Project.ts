@@ -39,6 +39,25 @@ export default class ProjectServiceClass {
 		});
 		return await res.json();
 	}
+	async updateOne(id: number, newProject: Project) {
+		const res = await fetch(`${API_URL}/${id}`, {
+			body: JSON.stringify(newProject),
+			headers: {
+				"content-type": "application/json",
+			},
+			method: "PUT",
+		});
+		return await res.json();
+	}
+	async deleteOne(id: number) {
+		const res = await fetch(`${API_URL}/${id}`, {
+			headers: {
+				"content-type": "application/json",
+			},
+			method: "DELETE",
+		});
+		return await res.json();
+	}
 }
 
 export const ProjectService = new ProjectServiceClass();
