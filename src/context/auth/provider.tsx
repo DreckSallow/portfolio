@@ -1,6 +1,6 @@
 "use client";
 import { Children } from "@/interfaces";
-import { SessionState } from "@/interfaces/session";
+import { SessionState } from "@/lib/session";
 import { useEffect, useState } from "react";
 import { AuthContext } from "./context";
 import CONSTANTS from "@/constants";
