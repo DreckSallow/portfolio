@@ -1,14 +1,9 @@
-import { NextResponse } from "next/server";
 import { prisma } from "../prisma";
 import { ProjectData } from "../types";
+import { ProjectServer } from "@/app/api/project";
 
 export async function GET() {
-	const projects = await prisma.project.findMany();
-
-	return NextResponse.json({
-		data: projects,
-		error: null,
-	});
+	return await ProjectServer.getAll();
 }
 
 export async function POST(req: Request) {

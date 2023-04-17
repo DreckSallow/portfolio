@@ -10,9 +10,7 @@ type ServerError<T> = {
 export default class ProjectServiceClass {
 	async getAll(): Promise<ServerError<ProjectWithId[]>> {
 		const res = await fetch(API_URL, {
-			next: {
-				revalidate: 60 * 60 * 1,
-			},
+			cache: "no-store",
 		});
 
 		return await res.json();
@@ -22,9 +20,7 @@ export default class ProjectServiceClass {
 			headers: {
 				"content-type": "application/json",
 			},
-			next: {
-				revalidate: 60 * 60 * 1,
-			},
+			cache: "no-store",
 		});
 		return await res.json();
 	}

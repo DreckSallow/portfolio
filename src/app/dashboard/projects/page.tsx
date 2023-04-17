@@ -1,17 +1,22 @@
-import { ProjectService } from "@/services/Project";
 import Link from "next/link";
 import DeleteProjectButton from "./client";
+import { ProjectServer, serverFetch } from "@/app/api/project";
+import { ProjectWithId } from "@/interfaces";
 
 async function getProjects() {
-	const { data, error } = await ProjectService.getAll();
+	const { data, error } = await serverFetch<ProjectWithId[]>(
+		await ProjectServer.getAll(),
+	);
 	return {
 		data: data?.map(({ title, overview, id }) => ({ title, overview, id })),
 		error,
 	};
 }
 
-export default async function Page() {
-	const { data, error } = await getProjects();
+type Props = {};
+
+export default async function Page(p: Props) {
+	const { data } = await getProjects();
 
 	return (
 		<>

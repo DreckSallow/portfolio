@@ -2,6 +2,9 @@
 import { ProjectService } from "@/services/Project";
 import { FormProject, TypeInputs } from "../../form-project";
 import { useRouter } from "next/navigation";
+import useSWR from "swr";
+import CONSTANTS from "@/constants";
+import { ProjectWithId } from "@/interfaces";
 
 type Params = {
 	params: {
@@ -11,7 +14,18 @@ type Params = {
 
 async function Project({ params }: Params) {
 	const router = useRouter();
-	const { data, error } = await ProjectService.getOne(params.id);
+	const { data, error } = useSWR(
+		`${CONSTANTS.API_URL}projects`,
+		async (url) => {
+			const res = await fetch(`${url}/${params.id}`, {
+				headers: {
+					"content-type": "application/json",
+				},
+				cache: "no-store",
+			});
+			return (await res.json()) as ProjectWithId;
+		},
+	);
 
 	const createProject = async (formData: TypeInputs) => {
 		const { data, error } = await ProjectService.updateOne(params.id, {

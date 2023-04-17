@@ -4,7 +4,9 @@ import { ProjectService } from "@/services/Project";
 import { FormProject, TypeInputs } from "../form-project";
 import { useRouter } from "next/navigation";
 
-const CreateProject = () => {
+type Props = {};
+
+const CreateProject = (p: Props) => {
 	const router = useRouter();
 
 	const createProject = async (formData: TypeInputs) => {

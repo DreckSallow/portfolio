@@ -4,7 +4,9 @@ import { stringToRoleUser } from "@/lib/user";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const Auth = () => {
+type Props = {};
+
+const Auth = (_: Props) => {
 	const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
 	const [inputs, setInputs] = useState({

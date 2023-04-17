@@ -9,15 +9,19 @@ const AuthProvider = ({ children }: Children) => {
 	const [session, setSession] = useState<SessionState>(null);
 
 	useEffect(() => {
-		const userLogged = window.localStorage.getItem(CONSTANTS.USER_LOGGED);
-		if (userLogged) {
-			setSession(JSON.parse(userLogged));
+		if (typeof window !== "undefined") {
+			const userLogged = window.localStorage.getItem(CONSTANTS.USER_LOGGED);
+			if (userLogged) {
+				setSession(JSON.parse(userLogged));
+			}
 		}
 	}, []);
 
 	const setUserSession = (s: SessionState) => {
-		window.localStorage.setItem(CONSTANTS.USER_LOGGED, JSON.stringify(s));
-		setSession(s);
+		if (typeof window !== "undefined") {
+			window.localStorage.setItem(CONSTANTS.USER_LOGGED, JSON.stringify(s));
+			setSession(s);
+		}
 	};
 
 	return (

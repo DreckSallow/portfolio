@@ -1,9 +1,11 @@
+"use client";
 import { Theme } from "@/interfaces";
 import { useCallback, useEffect, useState } from "react";
 
 export const useLocalTheme = (): [Theme, (theme: Theme) => void] => {
 	const [theme, setTheme] = useState(() => {
-		const theme = window.localStorage.getItem("theme");
+		if (typeof window === "undefined") return "light";
+		const theme = window.localStorage.getItem("theme") ?? "light";
 		if (theme) {
 			return theme as Theme;
 		} else {
@@ -26,9 +28,11 @@ export const useLocalTheme = (): [Theme, (theme: Theme) => void] => {
 	}, []);
 
 	const changeTheme = (theme: Theme) => {
-		window.localStorage.setItem("theme", theme);
-		toggleTheme(theme);
-		setTheme(theme);
+		if (typeof window !== "undefined") {
+			window.localStorage.setItem("theme", theme);
+			toggleTheme(theme);
+			setTheme(theme);
+		}
 	};
 
 	return [theme, changeTheme];

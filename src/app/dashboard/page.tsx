@@ -1,3 +1,5 @@
-export default function Page() {
-	return null;
+type Props = {};
+
+export default function Page(p: Props) {
+	return <></>;
 }

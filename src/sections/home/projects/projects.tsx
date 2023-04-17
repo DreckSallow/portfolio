@@ -1,8 +1,11 @@
+import { ProjectServer, serverFetch } from "@/app/api/project";
 import ProjectCard from "./project-card";
-import { ProjectService } from "@/services/Project";
+import { Project } from "@/interfaces";
 
 export default async function Projects() {
-	const { data, error } = await ProjectService.getAll();
+	const { data, error } = await serverFetch<Project[]>(
+		await ProjectServer.getAll(),
+	);
 
 	return (
 		<section className="flex-center section bg-base text-normal" id="projects">
