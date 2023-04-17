@@ -13,7 +13,7 @@ const NavBar = () => {
 	const { status } = useSession();
 
 	const ThemeIcon = () => {
-		return theme === "light" ? (
+		return theme === "dark" ? (
 			<SunIcon height={24} width={24} />
 		) : (
 			<MoonIcon height={24} width={24} />
