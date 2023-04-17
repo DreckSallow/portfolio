@@ -1,8 +1,6 @@
 "use client";
-import { useSession } from "@/context/auth/context";
-import { stringToRoleUser } from "@/lib/user";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 type Props = {};
 
@@ -14,36 +12,17 @@ const Auth = (_: Props) => {
 		password: "",
 	});
 
-	const { userSession, setUserSession } = useSession();
+	// const { userSession, setUserSession } = useSession();
 
-	const router = useRouter();
-
-	useEffect(() => {
-		if (userSession) {
-			return router.push("/dashboard"); //Or use cookies?🤔
-		}
-	}, [userSession]);
+	// const router = useRouter();
 
 	const loginUser = async () => {
-		const res = await fetch("http://localhost:3000/api/login", {
-			body: JSON.stringify({ ...inputs }),
-			method: "POST",
+		await signIn("credentials", {
+			redirect: true,
+			username: inputs.username,
+			password: inputs.password,
+			callbackUrl: "/dashboard",
 		});
-
-		const parsed = await res.json();
-
-		if (!res.ok) {
-			setTimeout(() => {
-				setErrorMessage(null);
-			}, 2000);
-			return setErrorMessage(parsed.error);
-		}
-		setUserSession({
-			name: parsed.data.username,
-			role: stringToRoleUser(parsed.data.role),
-			token: parsed.data.token,
-		});
-		router.push("/");
 	};
 
 	return (

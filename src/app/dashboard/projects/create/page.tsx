@@ -43,7 +43,6 @@ const CreateProject = (p: Props) => {
 		if (inputs["demo"].length === 0 && inputs["repository"].length === 0) {
 			newErrors["demo"] = "Demo or repository is required";
 		}
-		console.log("newErroes: ", newErrors);
 
 		if (Object.values(newErrors).every((s) => s.length === 0)) {
 			createProject(inputs);

@@ -7,8 +7,6 @@ type Props = {
 };
 
 const ProjectCard = ({ project }: Props) => {
-	console.log("project: ", project);
-
 	return (
 		<div className="rounded-md bg-soft flex-column w-64 overflow-hidden p-3">
 			<div className="min-w-0">

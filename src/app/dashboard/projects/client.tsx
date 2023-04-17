@@ -18,7 +18,6 @@ const LinkEvent = ({ className, id }: LinkProps) => {
 				if (!error) {
 					router.refresh();
 				}
-				console.log({ error });
 			}}
 			className={className}
 		>

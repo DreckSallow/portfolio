@@ -1,15 +1,16 @@
 "use client";
 import { MoonIcon, SunIcon } from "@/components/icons";
 import { Nav, NavItem, NavLink } from "@/components/nav/nav";
-import { useSession } from "@/context/auth/context";
-import { useLocalTheme } from "@/hooks/useLocalTheme";
+import { useTheme } from "@/context/theme/context";
+import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 
 const NavBar = () => {
 	const [openMenu, setOpenMenu] = useState<undefined | boolean>(false);
-	const [theme, setTheme] = useLocalTheme();
-	const { userSession, setUserSession } = useSession();
+	const { theme, setTheme } = useTheme();
+	const { status } = useSession();
 
 	const ThemeIcon = () => {
 		return theme === "light" ? (
@@ -27,7 +28,9 @@ const NavBar = () => {
 			}}
 			logo={<span className="text-accent">Dreck</span>}
 		>
-			{userSession && <NavLink link="/dashboard" text="Dashboard" />}
+			{status === "authenticated" && (
+				<NavLink link="/dashboard" text="Dashboard" />
+			)}
 			<NavLink link="/" text="Home" />
 			<NavLink link="/blog" text="Blog" />
 			<NavItem
@@ -36,14 +39,17 @@ const NavBar = () => {
 					setOpenMenu((p) => !p);
 				}}
 			>
-				{!userSession ? (
+				{status === "unauthenticated" ? (
 					<Link href="/login" className="icon-normal">
 						<span className="">Acces</span>
 					</Link>
 				) : (
 					<span
 						onClick={() => {
-							setUserSession(null);
+							signOut({
+								redirect: true,
+								callbackUrl: "/",
+							});
 						}}
 						onKeyDown={() => {}}
 					>

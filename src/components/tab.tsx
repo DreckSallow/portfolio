@@ -14,11 +14,6 @@ type TabProps = {
 
 const Tab = ({ styles, link, text, selected, match, noSelected }: TabProps) => {
 	const segment = useSelectedLayoutSegment();
-	// console.log({
-	// 	segment,
-	// 	match,
-	// 	className: `${styles} ${segment === match && selected}`,
-	// });
 
 	return (
 		<Link
