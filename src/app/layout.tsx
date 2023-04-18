@@ -22,7 +22,7 @@ export default function RootLayout({ children, session }: IProps) {
 					: "base-theme"
 			}
 		>
-			<body className="min-w-screen min-h-screen">
+			<body className="min-w-screen min-h-screen scroll-custom">
 				<Providers
 					session={session}
 					theme={theme ? (theme.value as Theme) : "light"}

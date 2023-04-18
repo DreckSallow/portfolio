@@ -6,6 +6,7 @@ export interface Project {
 	video?: string;
 	repository?: string;
 	demo?: string;
+	tags: Array<string>;
 }
 
 export interface ProjectWithId extends Project {
