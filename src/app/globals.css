@@ -79,6 +79,22 @@
   }
 
   .container-page {
-    @apply pt-16 min-h-screen flex-center;
+    @apply pt-16  flex-center;
+  }
+
+  .scroll-custom::-webkit-scrollbar {
+    width: 0.3em;
+    height: 0.8em;
+  }
+  /* Track */
+  .scroll-custom::-webkit-scrollbar-track {
+    border-radius: 999999px;
+    background-color: #86898b;
+  }
+
+  /* Handle */
+  .scroll-custom::-webkit-scrollbar-thumb {
+    background-color: #595c60;
+    border-radius: 999999px;
   }
 }
