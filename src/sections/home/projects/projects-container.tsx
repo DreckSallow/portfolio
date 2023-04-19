@@ -61,13 +61,13 @@ const ProjectsContainer = ({ projects }: Props) => {
 					contentPosition="center"
 					contentCss="p-4 bg-soft rounded-md w-9/12"
 				>
-					<div className="m-2 p-3 flex flex-col sm:flex-row gap-5 items-center">
+					<div className="p-3 flex flex-col w-full sm:flex-row gap-5 items-center">
 						<div className="flex flex-col sm:w-1/2 lg:w-3/5">
 							<h4 className="text-2xl font-medium mb-3">
 								{currenProject.title}
 							</h4>
 							<p className="text-xs font-light tracking-wider">{projectDesc}</p>
-							<div className="flex flex-row gap-1 font-light tracking-wider py-1 mt-3">
+							<div className="flex flex-row gap-1 font-light tracking-wider py-1 mt-3 w-full flex-wrap">
 								{currenProject?.tags.map((t, i) => {
 									return (
 										<Badge
@@ -105,7 +105,7 @@ const ProjectsContainer = ({ projects }: Props) => {
 								</div>
 							)}
 						</div>
-						<div className="relative sm:w-1/2 lg:w-2/5 aspect-video">
+						<div className="relative w-full sm:w-1/2 lg:w-2/5 aspect-video">
 							{currenProject.img ? (
 								<Image src={currenProject.img} alt={currenProject.title} fill />
 							) : (
