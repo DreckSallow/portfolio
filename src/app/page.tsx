@@ -27,7 +27,7 @@ export default function Home() {
 							role="button"
 							target="_blank"
 							rel="noreferrer"
-							className="rounded-lg bg-blue-400 px-6 py-3 sm:mt-7 mt-6 text-white tracking-wide"
+							className="rounded-lg bg-blue-400 px-6 py-3 sm:mt-7 mt-6 text-white tracking-wide font-medium"
 						>
 							Contact Me
 						</a>
