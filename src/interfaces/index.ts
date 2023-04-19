@@ -5,3 +5,9 @@ export interface Children {
 }
 
 export type Theme = "light" | "dark";
+
+export interface ClassName {
+	className?: string;
+}
+
+export interface Basic extends Children, ClassName {}
