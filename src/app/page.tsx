@@ -15,19 +15,22 @@ export default function Home() {
 							I bring websites to life with code
 						</h3>
 					</div>
-					<div className="text-start flex-column sm:block">
+					<div className="flex items-start flex-column gap-4">
 						<p className="text-base md:text-lg mt-6 text-normal">
 							I'm frontend developer, passionate about technology, and focused
 							on building better projects. Always for ways to expand my horizons
 							and challenge myself. I'm sure that I can be an important part of
 							your company to build exceptional things.
 						</p>
-						<button
+						<a
+							href="https://calendly.com/dikson/meet"
 							role="button"
+							target="_blank"
+							rel="noreferrer"
 							className="rounded-lg bg-blue-400 px-6 py-3 sm:mt-7 mt-6 text-white tracking-wide"
 						>
 							Contact Me
-						</button>
+						</a>
 					</div>
 				</div>
 			</section>

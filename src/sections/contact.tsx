@@ -1,4 +1,8 @@
-import { GithubIcon, LinkedinIcon } from "@/components/icons/common";
+import {
+	CalendlyIcon,
+	GithubIcon,
+	LinkedinIcon,
+} from "@/components/icons/common";
 export default function ContactSection() {
 	return (
 		<section className="flex flex-col items-center justify-center section bg-base text-normal ">
@@ -20,17 +24,36 @@ export default function ContactSection() {
 						href="https://github.com/DreckSallow"
 						target="_blank"
 						rel="noreferrer"
-						className="bg-soft p-2"
+						className="bg-soft py-2 px-4 flex flex-col items-center gap-2"
 					>
 						<GithubIcon className="icon-normal" height="3rem" width="3rem" />
+						<span className="text-xs opacity-50">Github</span>
 					</a>
 					<a
 						href="https://www.linkedin.com/in/dikson-aranda/"
 						target="_blank"
 						rel="noreferrer"
-						className="bg-soft p-2"
+						className="bg-soft py-2 px-4 flex flex-col items-center gap-2"
 					>
-						<LinkedinIcon className="icon-normal" height="3rem" width="3rem" />
+						<LinkedinIcon
+							className="fill-blue-500"
+							height="3rem"
+							width="3rem"
+						/>
+						<span className="text-xs opacity-50">Linkedin</span>
+					</a>
+					<a
+						href="https://calendly.com/dikson/meet"
+						target="_blank"
+						rel="noreferrer"
+						className="bg-soft py-2 px-4 flex flex-col items-center gap-2"
+					>
+						<CalendlyIcon
+							className="fill-blue-500"
+							height="3rem"
+							width="3rem"
+						/>
+						<span className="text-xs opacity-50">Calendly</span>
 					</a>
 				</div>
 			</div>
