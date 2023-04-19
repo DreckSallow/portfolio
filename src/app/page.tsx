@@ -1,6 +1,6 @@
+import ContactSection from "@/sections/contact";
 import About from "@/sections/home/about";
 import Projects from "@/sections/home/projects/projects";
-import { Suspense } from "react";
 
 export default function Home() {
 	return (
@@ -33,10 +33,8 @@ export default function Home() {
 			</section>
 			<About />
 
-			<Suspense fallback={<div>LOADING...</div>}>
-				{/* @ts-expect-error Server Component */}
-				<Projects />
-			</Suspense>
+			<Projects />
+			<ContactSection />
 		</main>
 	);
 }

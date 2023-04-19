@@ -38,7 +38,7 @@ const ProjectCard = ({ project, onDetail }: Props) => {
 				>
 					{project.title}
 				</h4>
-				<p className="text-sm max-h-16 overflow-auto scroll-custom">
+				<p className="text-sm h-16 overflow-auto scroll-custom">
 					{project.overview.slice(0, 150)}
 				</p>
 				<div className="flex flex-row gap-4 pt-3 justify-end pr-1">

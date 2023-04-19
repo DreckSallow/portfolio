@@ -1,7 +1,7 @@
 import ProjectsContainer from "./projects-container";
 import { projectsData } from "@/app/api/data";
 
-export default async function Projects() {
+export default function Projects() {
 	return (
 		<section className="flex-center section bg-base text-normal" id="projects">
 			<div className="flex flex-col max-w-4xl items-center">
