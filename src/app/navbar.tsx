@@ -1,9 +1,8 @@
 "use client";
 import { MoonIcon, SunIcon } from "@/components/icons";
-import { Nav, NavItem, NavLink } from "@/components/nav/nav";
+import { Nav, NavItem } from "@/components/nav/nav";
 import { useTheme } from "@/context/theme/context";
 import { useSession } from "next-auth/react";
-import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -26,9 +25,31 @@ const NavBar = () => {
 			setOpenMenu={(s) => {
 				setOpenMenu(s);
 			}}
-			logo={<span className="text-accent">Dreck</span>}
+			logo={
+				<Link href="/" className="text-accent font-medium">
+					Dreck
+				</Link>
+			}
 		>
-			{status === "authenticated" && (
+			<NavItem
+				onClick={() => {
+					setTheme(theme === "light" ? "dark" : "light");
+					setOpenMenu(false);
+				}}
+				className="icon-normal cursor-pointer !border-0 flex flex-row justify-between"
+			>
+				<span className="sm:hidden">Theme:</span>
+				<ThemeIcon />
+			</NavItem>
+		</Nav>
+	);
+};
+
+export default NavBar;
+
+/**
+ * 
+ * {status === "authenticated" && (
 				<NavLink link="/dashboard" text="Dashboard" />
 			)}
 			<NavLink link="/" text="Home" />
@@ -57,18 +78,4 @@ const NavBar = () => {
 					</span>
 				)}
 			</NavItem>
-			<NavItem
-				onClick={() => {
-					setTheme(theme === "light" ? "dark" : "light");
-					setOpenMenu(false);
-				}}
-				className="icon-normal cursor-pointer !border-0 flex flex-row justify-between"
-			>
-				<span className="sm:hidden">Theme:</span>
-				<ThemeIcon />
-			</NavItem>
-		</Nav>
-	);
-};
-
-export default NavBar;
+ */
