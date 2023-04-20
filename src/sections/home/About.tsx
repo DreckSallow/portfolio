@@ -3,9 +3,9 @@ import avatar from "../../../public/images/avatar-test.webp";
 
 const About = () => {
 	return (
-		<section className="flex-center section bg-base text-normal" id="about">
-			<div className="flex flex-col md:gap-6 max-w-4xl dark-color md:p-0 ">
-				<h3 className="text-2xl font-medium text-accent">ABOUT ME</h3>
+		<section className="flex-center bg-base text-normal section" id="about">
+			<div className="flex flex-col md:gap-6 max-w-4xl dark-color md:p-0 items-center">
+				<h3 className="text-3xl font-medium">About me</h3>
 				<div className="flex-col md:flex-row flex items-center gap-4 md:gap-10">
 					<p className="md:max-w-lg">
 						Hello!. I'm Dikson Aranda,{" "}

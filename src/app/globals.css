@@ -15,8 +15,7 @@
   --text-base: 0, 0%, 0%;
   --alpha: 1;
   --bg-base: 0, 0%, 100%;
-  --bg-soft: 240, 5%, 26%; /*bg-zinc-700*/
-  --bg-soft: 240, 5%, 96%; /*bg-zinc-100*/
+  --bg-soft: 240, 5%, 96%;
 }
 
 @layer base {
