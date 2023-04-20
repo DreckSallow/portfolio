@@ -41,19 +41,21 @@ const ProjectsContainer = ({ projects }: Props) => {
 	}, [currenProject]);
 
 	return (
-		<div className="flex flex-col sm:flex-row gap-4 items-center flex-wrap justify-center">
-			{projects.map((p, i) => {
-				return (
-					<ProjectCard
-						// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-						key={i}
-						project={p}
-						onDetail={() => {
-							setCurrentProject(p);
-						}}
-					/>
-				);
-			})}
+		<div>
+			<div className="flex flex-row flex-wrap items-center justify-center gap-4">
+				{projects.map((p, i) => {
+					return (
+						<ProjectCard
+							// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							key={i}
+							project={p}
+							onDetail={() => {
+								setCurrentProject(p);
+							}}
+						/>
+					);
+				})}
+			</div>
 			{currenProject && (
 				<Modal
 					onClose={() => setCurrentProject(null)}

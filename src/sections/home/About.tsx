@@ -1,13 +1,20 @@
 import Image from "next/image";
 import avatar from "../../../public/images/avatar-test.webp";
+import InView from "@/components/animations/in-view";
 
 const About = () => {
 	return (
-		<section className="flex-center bg-base text-normal section" id="about">
+		<section className="flex-center section bg-base text-normal" id="about">
 			<div className="flex flex-col md:gap-6 max-w-4xl dark-color md:p-0 items-center">
-				<h3 className="text-3xl font-medium">About me</h3>
+				<InView
+					type="h3"
+					className="text-3xl font-medium text-accent"
+					delay={0.2}
+				>
+					ABOUT ME
+				</InView>
 				<div className="flex-col md:flex-row flex items-center gap-4 md:gap-10">
-					<p className="md:max-w-lg">
+					<InView type="div" className="md:max-w-lg" delay={0.3}>
 						Hello!. I'm Dikson Aranda,{" "}
 						<span className="text-accent">Frontend Developer</span> . I am
 						passionate about building great things on the web and creating while
@@ -35,10 +42,14 @@ const About = () => {
 							profile
 						</a>
 						.
-					</p>
-					<div className="w-52 sm:w-80 mt-7 relative aspect-square">
+					</InView>
+					<InView
+						type="div"
+						className="w-52 sm:w-80 mt-7 relative aspect-square"
+						delay={0.4}
+					>
 						<Image src={avatar} fill alt="avatar" />
-					</div>
+					</InView>
 				</div>
 			</div>
 		</section>
