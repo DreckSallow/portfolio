@@ -1,6 +1,7 @@
 import InView from "@/components/animations/in-view";
 import { NoImageIcon } from "@/components/icons/common";
 import { Project } from "@/interfaces";
+import { UbuntuFont, MontserratFont, PoppinsFont } from "@/lib/fonts";
 import Image from "next/image";
 
 type Props = {
@@ -14,9 +15,9 @@ const ProjectCard = ({ project, onDetail }: Props) => {
 		<InView
 			type="div"
 			delay={0.4}
-			className="bg-soft flex-column min-w-0 w-3/4 sm:w-64 p-3 h-80"
+			className="bg-soft flex-column w-3/4 sm:w-72 h-80 p-3 rounded-md overflow-hidden border-2 border-gray-200"
 		>
-			<div className="min-w-0 h-36 relative">
+			<div className="h-36 relative">
 				{project.img ? (
 					<Image
 						src={project.img}
@@ -35,18 +36,20 @@ const ProjectCard = ({ project, onDetail }: Props) => {
 					</div>
 				)}
 			</div>
-			<div className="flex-column gap-2 py-2 px-1">
+			<div className="flex-column gap-2 pt-4 px-3 text-xs">
 				<h4
 					onClick={() => onDetail(project.title)}
 					onKeyDown={() => {}}
-					className="text-accent tracking-wider font-medium text-lg cursor-pointer"
+					className={`text-normal tracking-wider font-semibold text-sm cursor-pointer ${MontserratFont.className}`}
 				>
 					{project.title}
 				</h4>
-				<p className="text-sm h-16 overflow-auto scroll-custom">
+				<p
+					className={`text-sm h-16 overflow-auto scroll-custom text-normal font-light ${UbuntuFont.className}`}
+				>
 					{project.overview.slice(0, 150)}
 				</p>
-				<div className="flex flex-row gap-4 pt-3 justify-end pr-1">
+				{/* <div className="flex flex-row gap-4 pt-3 justify-end pr-1">
 					<span
 						onClick={() => onDetail(project.title)}
 						onKeyDown={() => {}}
@@ -54,7 +57,7 @@ const ProjectCard = ({ project, onDetail }: Props) => {
 					>
 						View Project
 					</span>
-				</div>
+				</div> */}
 			</div>
 		</InView>
 	);

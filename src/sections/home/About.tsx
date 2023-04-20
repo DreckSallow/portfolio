@@ -1,20 +1,30 @@
 import Image from "next/image";
 import avatar from "../../../public/images/avatar-test.webp";
 import InView from "@/components/animations/in-view";
+import { MontserratFont, PoppinsFont, UbuntuFont } from "@/lib/fonts";
 
 const About = () => {
 	return (
-		<section className="flex-center section bg-base text-normal" id="about">
+		<section
+			className="flex-center section bg-base text-normal !pt-2 pb-10"
+			id="about"
+		>
 			<div className="flex flex-col md:gap-6 max-w-4xl dark-color md:p-0 items-center">
 				<InView
 					type="h3"
-					className="text-3xl font-medium text-accent"
+					className={`text-3xl font-semibold text-accent tracking-wide ${MontserratFont.className}`}
 					delay={0.2}
 				>
-					ABOUT ME
+					About Me
 				</InView>
-				<div className="flex-col md:flex-row flex items-center gap-4 md:gap-10">
-					<InView type="div" className="md:max-w-lg" delay={0.3}>
+				<div
+					className={`flex-col md:flex-row flex items-center gap-4 md:gap-10 ${PoppinsFont.className}`}
+				>
+					<InView
+						type="div"
+						className={"md:max-w-lg text-base text-normal"}
+						delay={0.3}
+					>
 						Hello!. I'm Dikson Aranda,{" "}
 						<span className="text-accent">Frontend Developer</span> . I am
 						passionate about building great things on the web and creating while

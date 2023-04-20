@@ -2,6 +2,7 @@
 import { MoonIcon, SunIcon } from "@/components/icons";
 import { Nav, NavItem } from "@/components/nav/nav";
 import { useTheme } from "@/context/theme/context";
+import { MontserratFont } from "@/lib/fonts";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
@@ -26,7 +27,10 @@ const NavBar = () => {
 				setOpenMenu(s);
 			}}
 			logo={
-				<Link href="/" className="text-accent font-medium">
+				<Link
+					href="/"
+					className={`text-accent font-semibold text-sm tracking-wider ${MontserratFont.className}`}
+				>
 					Dreck
 				</Link>
 			}

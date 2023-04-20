@@ -18,7 +18,7 @@ export const Nav = ({ openMenu, children, logo, setOpenMenu }: Nav) => {
 	};
 
 	return (
-		<nav className="bg-base text-normal w-full fixed top-0 h-16 px-6 z-20">
+		<NavBar className="bg-base text-normal w-full fixed top-0 h-16 px-6 z-20">
 			<div className="fill hidden sm:flex-y-center justify-between">
 				{logo && <div className="Logo md:ml-6">{logo}</div>}
 				<ul className="flex-row gap-12 justify-evenly font-normal h-full flex-y-center">
@@ -53,9 +53,14 @@ export const Nav = ({ openMenu, children, logo, setOpenMenu }: Nav) => {
 					</MenuLinks>
 				</div>
 			)}
-		</nav>
+		</NavBar>
 	);
 };
+
+const NavBar = styled.nav`
+	--alpha:0.8;
+	backdrop-filter: blur(10px);
+`;
 
 const MenuLinks = styled.ul`
 	> li

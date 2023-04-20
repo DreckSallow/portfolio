@@ -7,15 +7,22 @@
   --text-base: 0, 0%, 100%;
   --bg-base: 240, 4%, 16%; /*bg-zinc-800*/
   --bg-soft: 240, 5%, 24%; /*bg-zinc-700*/
+  --bg-accent: 213, 94%, 68%; /*bg-zinc-700*/
   --alpha: 1;
 }
 
+/*hsl(222.86deg 29.17% 90.59%)*/
+
 .base-theme {
-  --text-acent: 213, 94%, 68%;
-  --text-base: 0, 0%, 0%;
+  --text-acent: 172, 66%, 50%;
+  --text-base: 240, 5%, 26%;
   --alpha: 1;
   --bg-base: 0, 0%, 100%;
-  --bg-soft: 240, 5%, 96%;
+  --bg-accent: 172, 66%, 50%;
+  /* --bg-soft: 223, 29%, 91%; */
+  /* --bg-soft: 0, 0%, 100%; */
+  --bg-soft: 240, 6%, 97%;
+  color: hsl(240deg 5.88% 96.67%);
 }
 
 @layer base {
@@ -44,6 +51,10 @@
 
   .bg-soft {
     background-color: hsla(var(--bg-soft), var(--alpha));
+  }
+
+  .bg-accent {
+    background-color: hsla(var(--bg-accent), var(--alpha));
   }
 }
 

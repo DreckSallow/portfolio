@@ -3,6 +3,7 @@ import { Children } from "@/interfaces";
 import { useEffect, useMemo, useRef } from "react";
 import { CloseIcon } from "./icons";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface Props extends Children {
 	onClose(): void;
@@ -48,10 +49,16 @@ export const Modal = ({
 	}, [contentPosition]);
 
 	return (
-		<ModalStyled
+		<motion.div
 			className={`fixed top-0 left-0 bottom-0 right-0 z-10 ${
 				className ?? ""
 			} ${positionStyles}`}
+			initial={{
+				opacity: 0,
+			}}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			key="modal-animated"
 		>
 			<div className={`relative ${contentCss}`} ref={modalContent}>
 				<button onClick={onClose} className="absolute top-1 right-1">
@@ -59,10 +66,10 @@ export const Modal = ({
 				</button>
 				{children}
 			</div>
-		</ModalStyled>
+		</motion.div>
 	);
 };
 
-const ModalStyled = styled.div`
-  --alpha: 0.94;
-`;
+// const ModalStyled = styled(motion.div)`
+//   --alpha: 0.94;
+// `;
