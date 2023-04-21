@@ -18,33 +18,34 @@ export const Nav = ({ openMenu, children, logo, setOpenMenu }: Nav) => {
 	};
 
 	return (
-		<nav className="bg-base text-normal w-full fixed top-0 h-16 px-6 z-20">
-			<div className="fill hidden sm:flex-y-center justify-between">
-				{logo && <div className="Logo md:ml-6">{logo}</div>}
-				<ul className="flex-row gap-12 justify-evenly font-normal h-full flex-y-center">
-					{children}
-				</ul>
-			</div>
+		<>
+			<NavBar className="bg-base text-normal w-full fixed top-0 h-16 px-6 z-20">
+				<div className="fill hidden sm:flex-y-center justify-between">
+					{logo && <div className="Logo md:ml-6">{logo}</div>}
+					<ul className="flex-row gap-12 justify-evenly font-normal h-full flex-y-center">
+						{children}
+					</ul>
+				</div>
 
-			<div className="sm:hidden fill flex-y-center flex-row justify-between">
-				{logo && <div className="Logo">{logo}</div>}
-				<ul className="justify-end fill flex-y-center">
-					<li
-						onClick={() => setOpenMenu?.(!openMenu)}
-						onKeyDown={() => {}}
-						className="icon-normal cursor-pointer"
-					>
-						{openMenu ? (
-							<CloseIcon height={26} width={26} />
-						) : (
-							<MenuIcon height={26} width={26} />
-						)}
-					</li>
-				</ul>
-			</div>
-
+				<div className="sm:hidden fill flex-y-center flex-row justify-between">
+					{logo && <div className="Logo">{logo}</div>}
+					<ul className="justify-end fill flex-y-center">
+						<li
+							onClick={() => setOpenMenu?.(!openMenu)}
+							onKeyDown={() => {}}
+							className="icon-normal cursor-pointer"
+						>
+							{openMenu ? (
+								<CloseIcon height={26} width={26} />
+							) : (
+								<MenuIcon height={26} width={26} />
+							)}
+						</li>
+					</ul>
+				</div>
+			</NavBar>
 			{openMenu && (
-				<div className="bg-base text-normal mt-16 fixed-fill sm:hidden px-6">
+				<div className="bg-base text-normal mt-16 fixed-fill sm:hidden px-6 f-10">
 					<MenuLinks
 						className="w-full flex-column gap-3 justify-center p-6"
 						onClick={(e) => menuClickLink(e as unknown as MouseEvent)}
@@ -53,9 +54,14 @@ export const Nav = ({ openMenu, children, logo, setOpenMenu }: Nav) => {
 					</MenuLinks>
 				</div>
 			)}
-		</nav>
+		</>
 	);
 };
+
+const NavBar = styled.nav`
+	--alpha:0.8;
+	backdrop-filter: blur(10px);
+`;
 
 const MenuLinks = styled.ul`
 	> li
