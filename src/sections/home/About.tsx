@@ -2,6 +2,16 @@ import Image from "next/image";
 import InView from "@/components/animations/in-view";
 import { MontserratFont, PoppinsFont } from "@/lib/fonts";
 
+const technologies = [
+	"Javascript",
+	"Typescript",
+	"React",
+	"NodeJS",
+	"Svelte",
+	"Nextjs",
+	"Rust",
+];
+
 const About = () => {
 	return (
 		<section
@@ -33,8 +43,7 @@ const About = () => {
 						I am a graduate of{" "}
 						<span className="text-accent">Henry bootcamp</span> where I learned
 						about all technologies within FullStack like frontend and some
-						backend. During the program I saw Html, Css, Javascript, React and
-						NodeJs (Express), building some projects alone and in a team.
+						backend.
 						<br />
 						<br />
 						Also, recently I have been learning more about Rust and its
@@ -51,6 +60,21 @@ const About = () => {
 							profile
 						</a>
 						.
+						<br />
+						<br />
+						<div>
+							<div>These are my skills:</div>
+							<ul className="mt-2 flex flex-row flex-wrap text-xs gap-4">
+								{technologies.map((s) => {
+									return (
+										<li className="tracking-wide">
+											<span className="text-accent font-semibold">{"> "}</span>
+											<span>{s}</span>
+										</li>
+									);
+								})}
+							</ul>
+						</div>
 					</InView>
 					<InView
 						type="div"
