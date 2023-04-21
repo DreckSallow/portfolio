@@ -84,7 +84,7 @@ const ProjectsContainer = ({ projects }: Props) => {
 									{currenProject?.tags.map((t, i) => {
 										return (
 											<Badge
-												className="border-1 border-blue-400 py-0.5 px-2 font-light"
+												className="border-1 border-accent py-0.5 px-2 font-light"
 												// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 												key={i}
 											>
@@ -100,7 +100,7 @@ const ProjectsContainer = ({ projects }: Props) => {
 										{currenProject?.demo && (
 											<a
 												href={currenProject?.demo}
-												className="bg-blue-400 text-white text-xs py-1 px-1.5 rounded-sm"
+												className="bg-accent text-white text-xs py-1 px-1.5 rounded-sm"
 												target="_blank"
 												rel="noreferrer"
 											>
@@ -110,7 +110,7 @@ const ProjectsContainer = ({ projects }: Props) => {
 										{currenProject?.repository && (
 											<a
 												href={currenProject?.repository}
-												className="bg-blue-400 text-white text-xs py-1 px-1.5 rounded-sm"
+												className="bg-accent text-white text-xs py-1 px-1.5 rounded-sm"
 												target="_blank"
 												rel="noreferrer"
 											>

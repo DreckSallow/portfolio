@@ -5,19 +5,15 @@
 .dark-theme {
   --text-acent: 213, 94%, 68%;
   --text-base: 0, 0%, 100%;
-  --bg-base: 240, 4%, 16%; /*bg-zinc-800*/
-  --bg-soft: 240, 5%, 24%; /*bg-zinc-700*/
-  --bg-accent: 213, 94%, 68%; /*bg-zinc-700*/
+  --bg-base: 240, 4%, 16%;
+  --bg-soft: 240, 5%, 24%;
+  --bg-accent: 213, 94%, 68%;
   --alpha: 1;
 }
-
-/*hsl(222.86deg 29.17% 90.59%)*/
 
 .base-theme {
   --text-acent: 172, 66%, 50%;
   --text-base: 240, 5%, 26%;
-  /* --text-base: 240, 5.5%, 24.9%; */
-  /* hsl(240deg 5.51% 24.9% / 75%) */
   --alpha: 1;
   --bg-base: 0, 0%, 100%;
   --bg-accent: 172, 66%, 50%;
@@ -46,6 +42,14 @@
 
   .f-10 {
     --alpha: 1;
+  }
+
+  .border-base {
+    border-color: hsla(var(--bg-base), var(--alpha));
+  }
+
+  .border-accent {
+    border-color: hsla(var(--bg-accent), var(--alpha));
   }
 
   .text-accent {
