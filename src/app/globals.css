@@ -16,13 +16,12 @@
 .base-theme {
   --text-acent: 172, 66%, 50%;
   --text-base: 240, 5%, 26%;
+  /* --text-base: 240, 5.5%, 24.9%; */
+  /* hsl(240deg 5.51% 24.9% / 75%) */
   --alpha: 1;
   --bg-base: 0, 0%, 100%;
   --bg-accent: 172, 66%, 50%;
-  /* --bg-soft: 223, 29%, 91%; */
-  /* --bg-soft: 0, 0%, 100%; */
-  --bg-soft: 240, 6%, 97%;
-  color: hsl(240deg 5.88% 96.67%);
+  --bg-soft: 0, 0%, 93%;
 }
 
 @layer base {
@@ -33,6 +32,22 @@
 }
 
 @layer utilities {
+  .f-5 {
+    --alpha: 0.5;
+  }
+
+  .f-8 {
+    --alpha: 0.8;
+  }
+
+  .f-6 {
+    --alpha: 0.6;
+  }
+
+  .f-10 {
+    --alpha: 1;
+  }
+
   .text-accent {
     color: hsla(var(--text-acent), var(--alpha));
   }

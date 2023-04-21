@@ -5,6 +5,7 @@ import {
 	LinkedinIcon,
 } from "@/components/icons/common";
 import { MontserratFont, PoppinsFont } from "@/lib/fonts";
+import { ContactLink } from "./components";
 
 export default function ContactSection() {
 	const Iconclass =
@@ -14,7 +15,7 @@ export default function ContactSection() {
 			<div className="max-w-2xl flex flex-col items-center justify-center">
 				<InView
 					type="h4"
-					className={`text-2xl font-medium mb-6 text-center ${MontserratFont.className}`}
+					className={`text-accent text-2xl font-medium mb-6 text-center ${MontserratFont.className}`}
 					delay={0.2}
 				>
 					Do you have a good and interesting idea and want to make it come true?
@@ -36,19 +37,16 @@ export default function ContactSection() {
 					className={`flex flex-row gap-4 mt-6 ${PoppinsFont.className}`}
 					delay={0.4}
 				>
-					<a
+					<ContactLink
 						href="https://github.com/DreckSallow"
-						target="_blank"
-						rel="noreferrer"
 						className={Iconclass}
 					>
 						<GithubIcon className="icon-normal" height="3rem" width="3rem" />
 						<span className="text-xs opacity-80">Github</span>
-					</a>
-					<a
+					</ContactLink>
+
+					<ContactLink
 						href="https://www.linkedin.com/in/dikson-aranda/"
-						target="_blank"
-						rel="noreferrer"
 						className={Iconclass}
 					>
 						<LinkedinIcon
@@ -57,11 +55,9 @@ export default function ContactSection() {
 							width="3rem"
 						/>
 						<span className="text-xs opacity-80">Linkedin</span>
-					</a>
-					<a
+					</ContactLink>
+					<ContactLink
 						href="https://calendly.com/dikson/meet"
-						target="_blank"
-						rel="noreferrer"
 						className={Iconclass}
 					>
 						<CalendlyIcon
@@ -70,7 +66,7 @@ export default function ContactSection() {
 							width="3rem"
 						/>
 						<span className="text-xs opacity-80">Calendly</span>
-					</a>
+					</ContactLink>
 				</InView>
 			</div>
 		</section>

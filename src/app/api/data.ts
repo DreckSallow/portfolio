@@ -11,7 +11,7 @@ export const projectsData: ProjectWithId[] = [
 			You can display tables of projects and tasks, with the corresponding information`,
 		tags: ["Rust"],
 		//TODO: Add the Img
-		// img: "https://github.com/DreckSallow/Marknote/raw/main/readme/marknote-img.PNG",
+		img: "/images/flow.gif",
 		repository: "https://github.com/DreckSallow/flow",
 	},
 	{

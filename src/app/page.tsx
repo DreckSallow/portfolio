@@ -1,4 +1,5 @@
 import InViewCore from "@/components/animations/core/";
+import { ButtonLink } from "@/components/animations/";
 import { MontserratFont, PoppinsFont } from "@/lib/fonts";
 import ContactSection from "@/sections/contact";
 import About from "@/sections/home/About";
@@ -32,15 +33,16 @@ export default function Home() {
 							and challenge myself. I'm sure that I can be an important part of
 							your company to build exceptional things.
 						</p>
-						<a
+						<ButtonLink
 							href="https://calendly.com/dikson/meet"
 							role="button"
 							target="_blank"
 							rel="noreferrer"
 							className="rounded-md bg-accent px-6 py-2.5 sm:mt-7 mt-6 text-white tracking-wide font-medium"
+							whileHover={{ scale: 1.05, opacity: 0.9 }}
 						>
 							Contact Me
-						</a>
+						</ButtonLink>
 					</div>
 				</InViewCore>
 			</section>

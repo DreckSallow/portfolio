@@ -16,7 +16,7 @@ export default function Projects() {
 				</InView>
 				<InView
 					type="p"
-					className={`mt-4 text-center mb-10 max-h-44 text-xl ${PoppinsFont.className}`}
+					className={`mt-4 text-center mb-10 max-h-44 text-lg ${PoppinsFont.className}`}
 					delay={0.3}
 				>
 					Welcome to my projects section, where you can find some of my projects

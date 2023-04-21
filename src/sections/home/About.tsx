@@ -1,7 +1,6 @@
 import Image from "next/image";
-import avatar from "../../../public/images/avatar-test.webp";
 import InView from "@/components/animations/in-view";
-import { MontserratFont, PoppinsFont, UbuntuFont } from "@/lib/fonts";
+import { MontserratFont, PoppinsFont } from "@/lib/fonts";
 
 const About = () => {
 	return (
@@ -9,7 +8,7 @@ const About = () => {
 			className="flex-center section bg-base text-normal !pt-2 pb-10"
 			id="about"
 		>
-			<div className="flex flex-col md:gap-6 max-w-4xl dark-color md:p-0 items-center">
+			<div className="flex flex-col gap-4 md:gap-6 max-w-4xl dark-color md:p-0 items-center">
 				<InView
 					type="h3"
 					className={`text-3xl font-semibold text-accent tracking-wide ${MontserratFont.className}`}
@@ -18,7 +17,7 @@ const About = () => {
 					About Me
 				</InView>
 				<div
-					className={`flex-col md:flex-row flex items-center gap-4 md:gap-10 ${PoppinsFont.className}`}
+					className={`flex-col md:flex-row flex items-center md:gap-10 ${PoppinsFont.className}`}
 				>
 					<InView
 						type="div"
@@ -58,7 +57,11 @@ const About = () => {
 						className="w-52 sm:w-80 mt-7 relative aspect-square"
 						delay={0.4}
 					>
-						<Image src={avatar} fill alt="avatar" />
+						<Image
+							src={"https://avatars.githubusercontent.com/u/86900322?v=4"}
+							fill
+							alt="avatar"
+						/>
 					</InView>
 				</div>
 			</div>

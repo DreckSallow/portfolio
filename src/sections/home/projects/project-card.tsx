@@ -1,7 +1,7 @@
-import InView from "@/components/animations/in-view";
 import { NoImageIcon } from "@/components/icons/common";
 import { Project } from "@/interfaces";
-import { UbuntuFont, MontserratFont, PoppinsFont } from "@/lib/fonts";
+import { UbuntuFont, MontserratFont } from "@/lib/fonts";
+import { ProjectCardAnimated } from "@/sections/components";
 import Image from "next/image";
 
 type Props = {
@@ -12,10 +12,10 @@ type Props = {
 
 const ProjectCard = ({ project, onDetail }: Props) => {
 	return (
-		<InView
-			type="div"
-			delay={0.4}
-			className="bg-soft flex-column w-3/4 sm:w-72 h-80 p-3 rounded-md overflow-hidden border-2 border-gray-200"
+		<ProjectCardAnimated
+			className={
+				"bg-soft flex-column w-3/4 sm:w-72 h-80 p-3 rounded-md overflow-hidden"
+			}
 		>
 			<div className="h-36 relative">
 				{project.img ? (
@@ -49,17 +49,17 @@ const ProjectCard = ({ project, onDetail }: Props) => {
 				>
 					{project.overview.slice(0, 150)}
 				</p>
-				{/* <div className="flex flex-row gap-4 pt-3 justify-end pr-1">
+				<div className="flex flex-row gap-4 pt-3 justify-end pr-1">
 					<span
 						onClick={() => onDetail(project.title)}
 						onKeyDown={() => {}}
-						className="text-xs text-accent underline hover:text-normal transition-colors cursor-pointer underline-offset-4"
+						className="text-xs underline text-accent hover:text-normal transition-colors cursor-pointer underline-offset-4"
 					>
 						View Project
 					</span>
-				</div> */}
+				</div>
 			</div>
-		</InView>
+		</ProjectCardAnimated>
 	);
 };
 
