@@ -18,6 +18,8 @@ const CreateProject = (p: Props) => {
 			title: formData["title"],
 			img: formData["media"] === "image" ? formData["linkMedia"] : undefined,
 			video: formData["media"] === "video" ? formData["linkMedia"] : undefined,
+			//TODO: Change this:
+			tags: [],
 		});
 		if (!error) {
 			router.replace("/dashboard/projects");

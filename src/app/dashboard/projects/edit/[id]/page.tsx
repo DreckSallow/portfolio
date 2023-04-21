@@ -36,6 +36,8 @@ async function Project({ params }: Params) {
 			title: formData["title"],
 			img: formData["media"] === "image" ? formData["linkMedia"] : undefined,
 			video: formData["media"] === "video" ? formData["linkMedia"] : undefined,
+			//TODO: Update this:
+			tags: [],
 		});
 
 		if (!error) {
