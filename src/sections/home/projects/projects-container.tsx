@@ -43,8 +43,8 @@ const ProjectsContainer = ({ projects }: Props) => {
 	}, [currenProject]);
 
 	return (
-		<div>
-			<div className="flex flex-row flex-wrap items-center justify-center gap-4">
+		<>
+			<div className="flex flex-row flex-wrap gap-4">
 				{projects.map((p, i) => {
 					return (
 						<ProjectCard
@@ -147,7 +147,7 @@ const ProjectsContainer = ({ projects }: Props) => {
 					</Modal>
 				)}
 			</AnimatePresence>
-		</div>
+		</>
 	);
 };
 
