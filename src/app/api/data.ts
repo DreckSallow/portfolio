@@ -10,7 +10,6 @@ export const projectsData: ProjectWithId[] = [
 			By default Flow create a main project that is the folder where its the flow data.
 			You can display tables of projects and tasks, with the corresponding information`,
 		tags: ["Rust"],
-		//TODO: Add the Img
 		img: "/images/flow.gif",
 		repository: "https://github.com/DreckSallow/flow",
 	},
@@ -25,7 +24,8 @@ export const projectsData: ProjectWithId[] = [
       ⚠️ The App demo is slow, wait a bit 🙇‍♂️`,
 		tags: ["Svelte-Kit", "Typescript", "GraphQl", "Prisma", "NodeJs"],
 		img: "https://drecksallow.github.io/DreckSallow/countries-app.png",
-		repository: "https://github.com/DreckSallow/Marknote",
+		repository: "https://github.com/DreckSallow/countries-app-svelte",
+		demo: "https://countries-app-svelte-6x6p.vercel.app/",
 	},
 	{
 		id: 3,
@@ -50,6 +50,6 @@ export const projectsData: ProjectWithId[] = [
       - Add a summary or a note`,
 		tags: ["Typescript", "Prisma", "NodeJs"],
 		img: "https://github.com/DreckSallow/Waxed/raw/main/Readme/workspace.PNG",
-		repository: "https://github.com/DreckSallow/Marknote",
+		repository: "https://github.com/DreckSallow/Waxed",
 	},
 ];
