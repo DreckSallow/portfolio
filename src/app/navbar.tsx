@@ -3,14 +3,14 @@ import { MoonIcon, SunIcon } from "@/components/icons";
 import { Nav, NavItem } from "@/components/nav/nav";
 import { useTheme } from "@/context/theme/context";
 import { MontserratFont } from "@/lib/fonts";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 
 const NavBar = () => {
 	const [openMenu, setOpenMenu] = useState<undefined | boolean>(false);
 	const { theme, setTheme } = useTheme();
-	const { status } = useSession();
+	// const { status } = useSession();
 
 	const ThemeIcon = () => {
 		return theme === "dark" ? (
