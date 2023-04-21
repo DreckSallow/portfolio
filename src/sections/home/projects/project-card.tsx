@@ -1,3 +1,4 @@
+import InView from "@/components/animations/in-view";
 import { NoImageIcon } from "@/components/icons/common";
 import { Project } from "@/interfaces";
 import Image from "next/image";
@@ -10,7 +11,11 @@ type Props = {
 
 const ProjectCard = ({ project, onDetail }: Props) => {
 	return (
-		<div className="bg-soft flex-column min-w-0 w-3/4 sm:w-64 p-3 h-80">
+		<InView
+			type="div"
+			delay={0.4}
+			className="bg-soft flex-column min-w-0 w-3/4 sm:w-64 p-3 h-80"
+		>
 			<div className="min-w-0 h-36 relative">
 				{project.img ? (
 					<Image
@@ -51,7 +56,7 @@ const ProjectCard = ({ project, onDetail }: Props) => {
 					</span>
 				</div>
 			</div>
-		</div>
+		</InView>
 	);
 };
 

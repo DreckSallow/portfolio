@@ -1,3 +1,4 @@
+import InViewCore from "@/components/animations/core/";
 import ContactSection from "@/sections/contact";
 import About from "@/sections/home/about";
 import Projects from "@/sections/home/projects/projects";
@@ -6,7 +7,13 @@ export default function Home() {
 	return (
 		<main className="fill">
 			<section className="flex-center section bg-base text-normal">
-				<div className="flex flex-col max-w-4xl">
+				<InViewCore
+					type="div"
+					delay={0.1}
+					initial={{ x: "-1em" }}
+					whileInView={{ x: 0 }}
+					className="flex flex-col max-w-4xl"
+				>
 					<div>
 						<h1 className="bg-gradient-to-r from-sky-500 to-emerald-500 bg-clip-text text-transparent text-5xl md:text-7xl font-extrabold">
 							Dikson Aranda
@@ -32,7 +39,7 @@ export default function Home() {
 							Contact Me
 						</a>
 					</div>
-				</div>
+				</InViewCore>
 			</section>
 			<About />
 
