@@ -17,8 +17,8 @@ export default function ContactSection() {
 				<InView
 					type="h4"
 					className={`text-accent text-2xl font-medium mb-6 text-center ${MontserratFont.className}`}
-				>
 					delay={0.2}
+				>
 					Do you have a good and interesting idea and want to make it come true?
 				</InView>
 				<InView

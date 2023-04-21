@@ -37,11 +37,12 @@ export const ProjectCardAnimated = ({ children, className }: Basic) => {
 			}}
 			whileInView={{
 				y: 0,
+				opacity: 1,
 				transition: {
-					delay: 0.1,
+					delay: 0.4,
 				},
 			}}
-			initial={{ y: "1em" }}
+			initial={{ y: "1em", opacity: 0 }}
 			transition={{ type: "tween" }}
 			viewport={{ once: true }}
 		>
