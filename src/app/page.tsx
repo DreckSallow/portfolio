@@ -1,10 +1,21 @@
 import InViewCore from "@/components/animations/core/";
-
 import { ButtonLink } from "@/components/animations/";
 import { MontserratFont, PoppinsFont } from "@/lib/fonts";
 import ContactSection from "@/sections/contact";
 import About from "@/sections/home/About";
 import Projects from "@/sections/home/projects/projects";
+
+export const metadata = {
+	title: "Dikson Aranda",
+	description:
+		"Explore my portfolio, where you can find my latest projects and ways to contact me",
+	authors: [{ name: "Dikson Aranda" }],
+	keywords: ["web", "portfolio", "developer"],
+	colorScheme: "dark light",
+	icons: {
+		icon: "/icon.svg",
+	},
+};
 
 export default function Home() {
 	return (

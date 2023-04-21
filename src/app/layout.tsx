@@ -6,12 +6,9 @@ import NavBar from "./navbar";
 import { Children, Theme } from "@/interfaces";
 import { Session } from "next-auth";
 
-
 interface IProps extends Children {
 	session: Session | null;
 }
-
-
 
 export default function RootLayout({ children, session }: IProps) {
 	const theme = cookies().get("theme");
