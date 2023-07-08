@@ -62,19 +62,19 @@ const ProjectsContainer = ({ projects }: Props) => {
 				{currenProject && (
 					<Modal
 						onClose={() => setCurrentProject(null)}
-						className="bg-neutral-700/90 mt-16 text-normal "
+						className="bg-neutral-800/90 text-normal "
 						contentPosition="center"
 						contentCss="p-4 bg-soft rounded-md w-9/12"
 					>
-						<div className="p-3 flex flex-col w-full sm:flex-row gap-5 items-center">
-							<div className="flex flex-col sm:w-1/2 lg:w-3/5">
+						<div className="p-3 flex flex-col-reverse w-full md:flex-row gap-5 items-center">
+							<div className="flex flex-col md:w-1/2 lg:w-3/5">
 								<h4
 									className={`text-2xl font-semibold mb-3 ${MontserratFont.className}`}
 								>
 									{currenProject.title}
 								</h4>
 								<p
-									className={`text-xs font-light tracking-wider ${PoppinsFont.className}`}
+									className={`text-sm font-light tracking-wider ${PoppinsFont.className}`}
 								>
 									{projectDesc}
 								</p>
@@ -120,7 +120,7 @@ const ProjectsContainer = ({ projects }: Props) => {
 									</div>
 								)}
 							</div>
-							<div className="relative w-full sm:w-1/2 lg:w-2/5 aspect-video">
+							<div className="relative w-full sm:w-5/6 md:w-1/2 lg:w-2/5 aspect-video">
 								{currenProject.img ? (
 									<Image
 										src={currenProject.img}

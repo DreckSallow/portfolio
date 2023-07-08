@@ -67,7 +67,7 @@ const About = () => {
 							<ul className="mt-2 flex flex-row flex-wrap text-xs gap-4">
 								{technologies.map((s) => {
 									return (
-										<li className="tracking-wide">
+										<li className="tracking-wide" key={s}>
 											<span className="text-accent font-semibold">{"> "}</span>
 											<span>{s}</span>
 										</li>
